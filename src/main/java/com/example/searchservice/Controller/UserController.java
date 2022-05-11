@@ -18,18 +18,14 @@ public class UserController {
     }
 
     @PostMapping()
-    public Mono<User> save(@RequestBody final User user){
-        return userService.save(user);
+    public void save(@RequestBody final User user){
+         userService.save(user);
     }
 
     @GetMapping("/{id}")
-    public Mono<User> findById(@PathVariable("id") final String id){
+    public User findById(@PathVariable final Long id){
         return userService.findById(id);
     }
 
-    @GetMapping("/all")
-    public Flux<User> findAll(){
-        return userService.findAll();
-    }
 
 }
