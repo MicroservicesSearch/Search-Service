@@ -1,7 +1,7 @@
 package com.example.searchservice.service;
 
 import com.example.searchservice.document.User;
-import com.example.searchservice.helper.Indices;
+import com.example.searchservice.document.helper.Indices;
 import com.example.searchservice.repository.UserRepository;
 import com.example.searchservice.search.SearchRequestDTO;
 import com.example.searchservice.search.util.SearchUtil;

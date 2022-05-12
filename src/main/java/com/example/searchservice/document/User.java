@@ -1,6 +1,6 @@
 package com.example.searchservice.document;
 
-import com.example.searchservice.helper.Indices;
+import com.example.searchservice.document.helper.Indices;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
