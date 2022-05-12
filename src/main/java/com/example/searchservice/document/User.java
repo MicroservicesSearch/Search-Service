@@ -18,6 +18,15 @@ public class User {
     @Field(type = FieldType.Text)
     private String username;
 
+    @Field(type = FieldType.Text)
+    private String firstname;
+
+    @Field(type = FieldType.Text)
+    private String lastname;
+
+    @Field(type = FieldType.Keyword)
+    private String email;
+
     public Long getId() {
         return id;
     }
@@ -32,5 +41,29 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
