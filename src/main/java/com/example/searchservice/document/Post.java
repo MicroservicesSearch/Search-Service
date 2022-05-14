@@ -9,6 +9,8 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import org.springframework.data.elasticsearch.annotations.Setting;
 
+import java.util.Date;
+
 @Document(indexName = Indices.POST_INDEX)
 @Setting(settingPath = "static/es-settings.json")
 @JsonIgnoreProperties(value = { "_class" })
@@ -16,18 +18,37 @@ public class Post {
 
     @Id
     @Field(type = FieldType.Keyword)
-    private Long id;
+    private String id;
     @Field(type = FieldType.Keyword)
     private String userId;
     @Field(type = FieldType.Text)
     private String text;
 
-    public Long getId() {
-        return id;
+    @Field(type = FieldType.Keyword)
+    private String parentId;
+
+    @Field(type = FieldType.Date)
+    private Date created;
+
+
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     public String getUserId() {
