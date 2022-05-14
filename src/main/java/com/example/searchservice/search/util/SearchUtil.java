@@ -2,6 +2,7 @@ package com.example.searchservice.search.util;
 
 import com.example.searchservice.search.SearchRequestDTO;
 import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.Operator;
 import org.elasticsearch.index.query.QueryBuilder;
@@ -42,7 +43,7 @@ public final class SearchUtil {
         }
 
         if (fields.size() > 1) {
-            final MultiMatchQueryBuilder queryBuilder = QueryBuilders.multiMatchQuery(dto.getSearchTerm())
+            final MultiMatchQueryBuilder queryBuilder = QueryBuilders.multiMatchQuery(dto.getSearchTerm()).fuzziness(Fuzziness.AUTO)
                     .type(MultiMatchQueryBuilder.Type.CROSS_FIELDS)
                     .operator(Operator.AND);
 
@@ -54,7 +55,7 @@ public final class SearchUtil {
         return fields.stream()
                 .findFirst()
                 .map(field ->
-                        QueryBuilders.matchQuery(field, dto.getSearchTerm())
+                        QueryBuilders.matchQuery(field, dto.getSearchTerm()).fuzziness(Fuzziness.AUTO)
                                 .operator(Operator.AND))
                 .orElse(null);
     }
