@@ -30,8 +30,8 @@ We have 3 Endpoints:
 
 
 ## JSON
-
-save 
+ 
+**Save**
 
 Example - localhost:8080/posts/
 
@@ -43,7 +43,7 @@ Example - localhost:8080/posts/
 "created":"2015-01-01"
 }`
 
-Search
+**Search**
 
 Example - localhost:8080/posts/search
 
