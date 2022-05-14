@@ -22,6 +22,15 @@ public class Post {
     @Field(type = FieldType.Text)
     private String text;
 
+    public Post() {
+    }
+
+    public Post(Long id, String userId, String text) {
+        this.id = id;
+        this.userId = userId;
+        this.text = text;
+    }
+
     public Long getId() {
         return id;
     }
