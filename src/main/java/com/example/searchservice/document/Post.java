@@ -31,6 +31,17 @@ public class Post {
     private Date created;
 
 
+    public Post() {
+    }
+
+    public Post(String id, String userId, String text, String parentId, Date created) {
+        this.id = id;
+        this.userId = userId;
+        this.text = text;
+        this.parentId = parentId;
+        this.created = created;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
