@@ -20,4 +20,38 @@ To run this application you need these docker containers running:
 ## Endpoints
 
 
+We have 3 Endpoints: 
+
+**save** - self-explanatory - localhost:8080/(posts or users)/
+
+**findById** - self-explanatory - localhost:8080/(posts or users)/{id}
+
+**search** - Searches the database with your request search term - localhost:8080/(posts or users )/search
+
+
+## JSON
+
+save 
+
+Example - localhost:8080/posts/
+
+`{
+"id":"1",
+"userId":"lukas@gmail.com",
+"text":"Hello Hej",
+"parentId":"123",
+"created":"2015-01-01"
+}`
+
+Search
+
+Example - localhost:8080/posts/search
+
+`{
+"fields":["userId"],
+"searchTerm":"lukas@gmail.com"
+}`
+
+
+
 
