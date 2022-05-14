@@ -8,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import org.springframework.data.elasticsearch.annotations.Setting;
 
+import java.util.Date;
+
 @Document(indexName = Indices.USER_INDEX)
 @Setting(settingPath = "static/es-settings.json")
 @JsonIgnoreProperties(value = { "_class" })
@@ -27,15 +29,27 @@ public class User {
     @Field(type = FieldType.Keyword)
     private String email;
 
+    @Field(type = FieldType.Date)
+    private Date birth;
+
     public User() {
     }
 
-    public User(Long id, String username, String firstname, String lastname, String email) {
+    public User(Long id, String username, String firstname, String lastname, String email, Date birth) {
         this.id = id;
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.birth = birth;
+    }
+
+    public Date getBirth() {
+        return birth;
+    }
+
+    public void setBirth(Date birth) {
+        this.birth = birth;
     }
 
     public Long getId() {
