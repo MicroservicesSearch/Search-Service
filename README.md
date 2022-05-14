@@ -26,7 +26,7 @@ We have 3 Endpoints:
 
 **findById** - self-explanatory - localhost:8080/(posts or users)/{id}
 
-**search** - Searches the database with your request search term - localhost:8080/(posts or users )/search
+**search** - Searches the database with your search term - localhost:8080/(posts or users )/search
 
 
 ## JSON
