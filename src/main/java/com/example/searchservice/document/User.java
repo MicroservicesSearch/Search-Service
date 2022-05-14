@@ -27,6 +27,17 @@ public class User {
     @Field(type = FieldType.Keyword)
     private String email;
 
+    public User() {
+    }
+
+    public User(Long id, String username, String firstname, String lastname, String email) {
+        this.id = id;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+    }
+
     public Long getId() {
         return id;
     }
