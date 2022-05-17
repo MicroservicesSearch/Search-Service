@@ -13,8 +13,9 @@ To run this application you need these docker containers running:
 
 * **docker run -d --name rabbitmq2 -p 15672:15672 -p 5672:5672 rabbitmq:3-management** - spring amqp</font>
 
-***You also need to add spring cloud discovery for consul in Spring application settings or in consul** 
+***You also need to add spring cloud discovery for consul in Spring application settings or in consul**
 
+****The application connects to an elasticsearch database through a variable: elasticsearch.url=name:9200 which you need to configure in your consul config**
 
 
 ## Endpoints
