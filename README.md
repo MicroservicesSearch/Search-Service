@@ -15,8 +15,7 @@ To run this application you need these docker containers running:
 
 ***You also need to add spring cloud discovery for consul in Spring application settings or in consul**
 
-****The application connects to an elasticsearch database through a variable called elasticsearch.url=localhost:9200 which you need to configure in your consul config**
-
+****The application connects to an elasticsearch database through a variable: elasticsearch.url=name:9200 which you need to configure in your consul config**
 
 
 ## Endpoints
