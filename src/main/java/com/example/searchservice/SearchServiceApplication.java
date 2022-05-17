@@ -15,11 +15,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class SearchServiceApplication {
 
-    public static final String EXCHANGE_POST = "exchangePost";
+    public static final String EXCHANGE_POST = "post-exchange";
     public static final String EXCHANGE_USER = "exchangeUser";
-    public static final String QUEUE_POST = "queuePost";
+    public static final String QUEUE_POST = "post-queue";
     public static final String QUEUE_USER= "queueUser";
-    public static final String ROUTING_KEY_POST = "routingKeyPost";
+    public static final String ROUTING_KEY_POST = "post.new";
     public static final String ROUTING_KEY_USER = "routingKeyUser";
 
     public static void main(String[] args) {
