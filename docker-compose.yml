@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   elasticsearch:
@@ -8,6 +8,7 @@ services:
      - discovery.type=single-node
    ports:
     - "9200:9200"
+
 
   consul:
     image: consul:1.11.2
@@ -29,3 +30,15 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+
+  search:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: searchservice
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rabbit_queue
+      - consul
+      - elasticsearch
