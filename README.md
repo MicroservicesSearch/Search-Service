@@ -3,7 +3,7 @@
 
 ## Configuration
 
-To run this application you need these docker containers running: 
+To run this application you need to run **docker-compose file** or follow the steps below to run the containers individually :
 
 * **docker network create search-network** - create network
 
