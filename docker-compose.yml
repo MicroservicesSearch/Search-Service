@@ -9,6 +9,7 @@ services:
    ports:
     - "9200:9200"
 
+
   consul:
     image: consul:1.11.2
     container_name: badger
@@ -34,6 +35,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: searchapp
+    container_name: searchservice
     ports:
       - "8080:8080"
+    depends_on:
+      - rabbit_queue
+      - consul
+      - elasticsearch
